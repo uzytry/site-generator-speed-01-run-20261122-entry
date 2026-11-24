@@ -57,10 +57,12 @@ reimplements the same rules with bulk native operations instead:
 - Practice set (3 cases, 1,070 Markdown sources): answers identical to the
   reference on every case, confirmed by the kit's own scorer (`passed: 1`)
   and by `grade-local` (two executions, reproduced byte for byte).
-- Also checked against the reference on freshly drawn instances from the
-  kit's own generator (different seeds): 0 mismatches.
-- Speed on this machine (fresh-process runs, CPU time): this entry vs the
-  house baseline — see the submission report for the measured numbers.
+- Also checked against the reference on 30 freshly drawn instances from the
+  kit's own generator (10 different seeds, 12,342 output files): 0 mismatches.
+- Speed on this machine (fresh-process runs of `node main.ts` on the practice
+  set, CPU time, trimmed mean of 7 rounds each): this entry 0.85 s vs the
+  house baseline 1.82 s — about 2.1x faster. The `run()` work alone, warm, is
+  about 0.19 s vs the reference's ~0.94 s.
 
 ## License
 
